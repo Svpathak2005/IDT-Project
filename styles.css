@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f9f0;
+    color: #333;
+    margin: 20px;
+}
+
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.calculator {
+    padding: 20px;
+    background-color: #e0f2e9;
+    border-radius: 8px;
+}
+
+label, select, input, button {
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#activity-list {
+    list-style-type: none;
+    padding: 10px;
+}
+
+#carbonChart {
+    margin: 20px auto;
+}
+
+.government-links button {
+    margin: 5px;
+    background-color: #17a2b8;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.complaint {
+    padding: 20px;
+    background-color: #f0f8f0;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.step {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border-radius: 8px;
+    width: 22%;
+    text-align: center;
+}
+
+.step.completed {
+    background-color: #28a745;
+    color: white;
+}
+

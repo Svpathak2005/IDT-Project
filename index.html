@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootprintX - Carbon Footprint Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>FootprintX - Carbon Footprint Calculator</h1>
+    </header>
+
+    <section class="calculator">
+        <h2>Calculate Your Carbon Footprint</h2>
+        <form id="carbon-form">
+            <label for="activity">Select an Activity:</label>
+            <select id="activity">
+                <option value="car" data-co2="0.24">Car travel (kg CO2 per hour)</option>
+                <option value="bike" data-co2="0.01">Bike travel (kg CO2 per hour)</option>
+                <option value="bus" data-co2="0.1">Bus travel (kg CO2 per hour)</option>
+                <option value="train" data-co2="0.06">Train travel (kg CO2 per hour)</option>
+                <option value="plane" data-co2="0.19">Plane travel (kg CO2 per hour)</option>
+                <option value="electricity" data-co2="0.45">Electricity use (kg CO2 per hour)</option>
+                <option value="heating" data-co2="0.35">Heating (kg CO2 per hour)</option>
+                <option value="cooking" data-co2="0.2">Cooking (kg CO2 per hour)</option>
+                <option value="laundry" data-co2="0.5">Laundry (kg CO2 per hour)</option>
+                <option value="computer" data-co2="0.02">Computer use (kg CO2 per hour)</option>
+            </select>
+
+            <label for="hours">Hours spent per day:</label>
+            <input type="number" id="hours" min="1" max="24" required>
+
+            <button type="button" id="add-activity">Add Activity</button>
+        </form>
+
+        <h3>Activities and CO2 Emissions</h3>
+        <ul id="activity-list"></ul>
+    </section>
+
+    <section id="result">
+        <canvas id="carbonChart" width="400" height="400"></canvas>
+        <div id="suggestions"></div>
+    </section>
+
+    <section class="government-links">
+        <h2>Important Government Links</h2>
+        <button onclick="window.location.href='https://moef.gov.in/'">Ministry of Environment</button>
+        <button onclick="window.location.href='https://forestsclearance.nic.in/'">Forest Clearance</button>
+        <button onclick="window.location.href='https://envfor.nic.in/'">Ministry of Forest & Climate</button>
+    </section>
+
+    <section class="complaint">
+        <h2>Submit a Complaint</h2>
+        <form id="complaint-form" method="post" enctype="multipart/form-data">
+            <textarea placeholder="Write your complaint here..." rows="5"></textarea><br>
+            <label for="file-upload">Attach a document:</label>
+            <input type="file" id="file-upload"><br>
+            <button type="submit">Send Complaint</button>
+        </form>
+    </section>
+
+    <section class="journey-map">
+        <h2>Complaint Status</h2>
+        <div class="stepper">
+            <div class="step completed">Logged</div>
+            <div class="step completed">Mail Sent</div>
+            <div class="step">Complaint Registered</div>
+            <div class="step">Complaint Solved</div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
