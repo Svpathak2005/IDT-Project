@@ -1,4 +1,4 @@
-from src.flasky. routes import app
+from src.flasky.routes import app
 
 if (__name__) == '__main__':
     app.run(debug=True)

@@ -5,17 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("emissionForm")
     .addEventListener("submit", function (event) {
       event.preventDefault();
+
       const mode = document.getElementById("mode");
+      const hours = document.getElementById("hours");
       const co2PerHour =
         mode.options[mode.selectedIndex].getAttribute("data-co2");
-      const hours = document.getElementById("hours").value;
 
       const data = {
         mode: mode.value,
         co2PerHour: co2PerHour,
-        hours: hours,
+        hours: hours.value,
       };
 
+      // Sending data to backend
       fetch("/add/emmission", {
         method: "POST",
         headers: {
@@ -24,7 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify(data),
       })
         .then((response) => response.json())
-        .then((result) => console.log(result));
+        .then((result) => {
+          console.log(result);
+
+          // Reset input fields after successful submission
+          mode.selectedIndex = 0;
+          hours.value = "";
+
+          // Show success popup
+          alert("Success: CO2 emission data submitted!");
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     });
 
   // Section 2: Emission Graph Plotting
