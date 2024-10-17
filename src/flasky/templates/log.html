@@ -1,93 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FootPrintX</title>
-    <link rel="stylesheet" href="/static/style/log.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h2>FootPrintX</h2>
+{% extends 'base.html' %} {% block head %}
 
-      <!-- Section 1: Emission Input -->
-      <section>
-        <h3>Calculate CO2 Emission</h3>
-        <form id="emissionForm">
-          <select id="mode" class="input-field">
-            <option value="car" data-co2="0.24">
-              Car travel (kg CO2 per hour)
-            </option>
-            <option value="bike" data-co2="0.01">
-              Bike travel (kg CO2 per hour)
-            </option>
-            <option value="bus" data-co2="0.1">
-              Bus travel (kg CO2 per hour)
-            </option>
-            <option value="train" data-co2="0.06">
-              Train travel (kg CO2 per hour)
-            </option>
-            <option value="plane" data-co2="0.19">
-              Plane travel (kg CO2 per hour)
-            </option>
-            <option value="electricity" data-co2="0.45">
-              Electricity use (kg CO2 per hour)
-            </option>
-            <option value="heating" data-co2="0.35">
-              Heating (kg CO2 per hour)
-            </option>
-            <option value="cooking" data-co2="0.2">
-              Cooking (kg CO2 per hour)
-            </option>
-            <option value="computer" data-co2="0.02">
-              Computer use (kg CO2 per hour)
-            </option>
-          </select>
-          <input
-            type="number"
-            id="hours"
-            class="input-field"
-            placeholder="Total hours spent"
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+<link rel="stylesheet" href="/static/style/log.css" />
+{% endblock %} {% block body %}
 
-      <!-- Section 2: Emission Line Graph -->
-      <section>
-        <h3>Emission Over Time</h3>
-        <canvas id="emissionChart"></canvas>
-      </section>
+<div class="container">
+  <h2>FootPrintX</h2>
 
-      <!-- Section 3: Complaint Form -->
-      <section>
-        <h3>File a Complaint</h3>
-        <form id="complaintForm">
-          <input type="text" class="form-field" placeholder="Title" required />
-          <textarea
-            class="form-field"
-            placeholder="Context"
-            required
-          ></textarea>
-          <select class="form-field">
-            <option value="ministry-gov">Ministry of Government</option>
-            <option value="ministry-hygiene">Ministry of Hygiene</option>
-            <!-- Add more options as needed -->
-          </select>
-          <button type="submit">Submit</button>
-        </form>
-        <div class="tracker">
-          <div>Sent: 10</div>
-          <div>Received: 8</div>
-          <div>Complaint Registered: 6</div>
-          <div>Complaint Resolved: 4</div>
-        </div>
-      </section>
+  <!-- Section 1: Emission Input -->
+  <section>
+    <h3>Calculate CO2 Emission</h3>
+    <form id="emissionForm">
+      <select id="mode" class="input-field">
+        <option value="car" data-co2="0.24">
+          Car travel (kg CO2 per hour)
+        </option>
+        <option value="bike" data-co2="0.01">
+          Bike travel (kg CO2 per hour)
+        </option>
+        <option value="bus" data-co2="0.1">Bus travel (kg CO2 per hour)</option>
+        <option value="train" data-co2="0.06">
+          Train travel (kg CO2 per hour)
+        </option>
+        <option value="plane" data-co2="0.19">
+          Plane travel (kg CO2 per hour)
+        </option>
+        <option value="electricity" data-co2="0.45">
+          Electricity use (kg CO2 per hour)
+        </option>
+        <option value="heating" data-co2="0.35">
+          Heating (kg CO2 per hour)
+        </option>
+        <option value="cooking" data-co2="0.2">
+          Cooking (kg CO2 per hour)
+        </option>
+        <option value="computer" data-co2="0.02">
+          Computer use (kg CO2 per hour)
+        </option>
+      </select>
+      <input
+        type="number"
+        id="hours"
+        class="input-field"
+        placeholder="Total hours spent"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Section 2: Emission Line Graph -->
+  <section>
+    <h3>Emission Over Time</h3>
+    <canvas id="emissionChart"></canvas>
+  </section>
+
+  <!-- Section 3: Complaint Form -->
+  <section>
+    <h3>File a Complaint</h3>
+    <form id="complaintForm">
+      <input type="text" class="form-field" placeholder="Title" required />
+      <textarea class="form-field" placeholder="Context" required></textarea>
+      <select class="form-field">
+        <option value="ministry-gov">Ministry of Government</option>
+        <option value="ministry-hygiene">Ministry of Hygiene</option>
+        <!-- Add more options as needed -->
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="tracker">
+      <div>Sent: 10</div>
+      <div>Received: 8</div>
+      <div>Complaint Registered: 6</div>
+      <div>Complaint Resolved: 4</div>
     </div>
-
-    <script src="/static/script/log.js"></script>
-    <!-- Include Chart.js library for the graph -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </body>
-</html>
+  </section>
+</div>
+{% endblock %} {% block script %}
+<script src="/static/script/log.js"></script>
+<!-- Include Chart.js library for the graph -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}

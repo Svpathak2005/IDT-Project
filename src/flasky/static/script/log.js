@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => {
           console.error("Error:", error);
+          alert("Error: CO2 emission data not submitted!");
         });
     });
 

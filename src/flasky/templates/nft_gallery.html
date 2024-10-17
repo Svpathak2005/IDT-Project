@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="/static/style/nft_gallery.css" />
+{% endblock %} {% block body %}
+
+<div class="nft-gallery">
+  <h1 id="total-nfts">Total NFTs:</h1>
+  <div class="nft-grid"></div>
+</div>
+
+{% endblock %} {% block script %}
+<script src="/static/script/nft_gallery.js"></script>
+{% endblock %}
